@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Log in to ZenMusic</title>
+        <link rel="stylesheet" href="loginAssets/login.css">
+        <link rel="wesbite icon" href="music player.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="back">
+            <ion-icon name="chevron-back-outline" id="backButton"></ion-icon>
+        </div>
+        <div id="mainContainer">
+            <form id="loginForm">
+                <div id='title'>Log in</div><br>
+                <div class="usernameinput">
+                    <label for="username"><ion-icon name="person" class="ion-icon"></ion-icon></label>
+                    <input type="text" id="username" placeholder="Username">
+                </div>
+                <div class="passwordinput">
+                    <label for="password"><ion-icon name="lock-closed" class="ion-icon"></ion-icon></label>
+                    <input type="password" id="password" placeholder="Password">
+                    <span id="showpass"><ion-icon name="eye" id="eye"></ion-icon></span>
+                </div>
+                <div class="submit">
+                    <input type="submit" id="check" value="Log in">
+                </div>
+            </form>
+        </div>
+    </body>
+    <script src="loginAssets/login.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</html>

@@ -1,0 +1,727 @@
+html {
+    overflow-x: hidden;
+    font-family: 'Poppins';
+    background-image: url('uuunion.svg');
+    background-size: cover;
+    scroll-behavior: smooth;
+}
+#musicPlayedName-base::-webkit-scrollbar,
+html::-webkit-scrollbar,
+#searchResultContainer::-webkit-scrollbar {
+    display: none
+}
+.musicProfile::-webkit-scrollbar {
+    height: 8px;
+    transition: 0.5s
+}
+.musicProfile::-webkit-scrollbar-track {
+    background-color: transparent;
+    transition: 0.5s
+}
+.musicProfile::-webkit-scrollbar-thumb {
+    background: rgba(35, 35, 35, 0.7); 
+    border-radius: 10px;
+    transition: 0.5s
+}
+.musicProfile::-webkit-scrollbar-thumb:hover {
+    background: rgb(0, 0, 0, 0.7);
+    transition: 0.5s
+}
+#scrollleft{
+    position: absolute;
+    right: 60px;
+    font-size: 50px;
+    top: 140px;
+    color: white;
+    transition: 0.5s
+}
+#scrollright{
+    position: absolute;
+    right: 10px;
+    font-size: 50px;
+    top: 140px;
+    color: white;
+    transition: 0.5s
+}
+#navbar{
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    backdrop-filter: blur(50px);
+    position: fixed;
+    top: 0px;
+    border-bottom: 3px solid white;
+    left: 0px;
+    z-index: 70
+}
+#logo{
+    width: 40px;
+    margin-left: 5px;
+    user-select: none;
+    margin-top: 5px;
+    cursor: pointer
+}
+img {
+    -webkit-user-drag: none;
+}
+#rcmd,
+#favorite{
+    margin-top: 80px;
+    font-size: 25px;
+    color: white
+}
+.musicPanel{
+    height: 100%;
+    width: 100%;
+    margin-left: 5px;
+}
+.statusBadge{
+    font-size: 50px;
+    border: 5px solid white;
+    width: max-content;
+    margin-left: 5px;
+    border-radius: 15px;
+    height: max-content;
+    padding: 0px 5px 0px 5px;
+    color: white;
+    margin-top: 70px;
+}
+.premiumStatus{
+    font-size: 50px;
+    border: 5px solid #00DFA2;
+    width: max-content;
+    margin-left: 5px;
+    border-radius: 15px;
+    height: max-content;
+    padding: 0px 5px 0px 5px;
+    color: #00DFA2;
+    margin-top: 70px;
+}
+.developerStatus{
+    margin-top: 70px;
+    font-size: 50px;
+    border: 5px solid #FFD700;
+    width: max-content;
+    margin-left: 5px;
+    height: max-content;
+    padding: 0px 5px 0px 5px;
+    background: #FFD700;
+    background: linear-gradient(to top left, #FFD700 0%, #CF730A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-radius: 15px;
+    cursor: default;
+}
+.musicPanel-Fav{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    margin-left: 5px;
+    border-bottom: 150px solid transparent
+}
+.musicProfile{
+    width: 96.5%; 
+    height: max-content;
+    overflow: scroll;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+    padding-right: 10px;
+    max-width: 550px;
+    overflow-y: hidden
+}
+.musicIcon{
+    width: max-content;
+    height: max-content;
+    margin-right: 10px;
+    transition: 0.3s;
+    margin-bottom: 15px
+}
+.musicImage{
+    width: 125px;
+    border-radius: 15px;
+    -webkit-user-drag: none
+}
+.musicIcon:hover{
+    filter: brightness(55%)
+}
+#ZenMusic{
+    position: absolute;
+    left: 0px;
+}
+#title{
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    font-size: 20px;
+    color:white;
+    cursor: pointer
+}
+#profile{
+    width: 40px;
+    position: absolute;
+    right: 5px;
+    margin-top: 5px;
+    user-select: none;
+}
+
+.navigationinfo{
+    width: 100%;
+    height: 60px;
+    backdrop-filter: blur(30px);
+    position: fixed;
+    bottom: 0px;
+    border-top: 3px solid white;
+    font-size: 20px;
+    left: 0px;
+    display: none;
+    transition: 0.5s;
+    z-index: 80
+}
+.musicPlayedImage-base{
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    left: 5px;
+    position: absolute;
+    top: 5px;
+    border-radius: 5px;
+    background-size: cover;
+    transition: 0.5s;
+}
+.musicPlayedName-base{
+    margin-left: 60px;
+    bottom: 25px;
+    position: absolute;
+    color: white;
+    width: max-content;
+    overflow: scroll;
+    user-select: none;
+    background-color: transparent;
+    white-space: nowrap;
+    text-overflow:clip;
+    max-width: 50%
+}
+.musicPlayedName-base-expanded{
+    left: 50%;
+    bottom: 47%;
+    position: absolute;
+    color: white;
+    width: max-content;
+    overflow: scroll;
+    user-select: none;
+    background-color: transparent;
+    white-space: nowrap;
+    text-overflow:clip;
+    max-width: 50%;
+    font-size: 35px;
+    transform: translate(-50%, 47%)
+}
+
+.musicPlayedArtist-base{
+    margin-left: 60px;
+    bottom: 10px;
+    position: absolute;
+    color: white;
+    width: max-content;
+    overflow: hidden;
+    user-select: none;
+    background-color: transparent;
+    white-space: nowrap;
+    text-overflow:clip;
+    max-width: 50%;
+    font-size: 13px;
+}
+.musicPlayedArtist-base-expanded{
+    left: 50%;
+    bottom: 42%;
+    position: absolute;
+    color: white;
+    width: max-content;
+    overflow: hidden;
+    user-select: none;
+    background-color: transparent;
+    white-space: nowrap;
+    text-overflow:clip;
+    max-width: 50%;
+    font-size: 14px;
+    transform: translate(-50%, 42%)
+}
+#music-Pause{
+    font-size: 40px;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s ease all
+}
+#music-Play{
+    font-size: 37px;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    color: white;
+    cursor: pointer;
+    display: none;
+    transition: 0.5s ease all
+}
+#volRange{
+    appearance: none;
+    width: 125px;
+    height: 13px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 3px;
+    right: 160px;
+    position: absolute;
+    top: 21px;
+}
+#volRangeEXP{
+    appearance: none;
+    width: 280px;
+    height: 13px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    top: 60%;
+}
+
+#volRange:hover {
+    opacity: 1;
+}
+
+#volRange::-webkit-slider-thumb,
+#volRangeEXP::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50px
+}
+
+#volRange::-moz-range-thumb,
+#volRangeEXP::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 50px
+}
+
+#searchElement{
+    position: absolute;
+    margin-top: 9px;
+    width: 100%
+}
+
+.search-none{
+    font-size: 32px;
+    color: white;
+    position: absolute;
+    right: 55px;
+    z-index: 5;
+    transition: 0.3s all ease
+}
+#search-box{
+    position: absolute;
+    top: -1px;
+    width: 90%;
+    height: 35px;
+    background-color: rgb(255, 255, 255, 0.75);
+    border: 1px solid white;
+    border-radius: 5px;
+    left: 5px;
+    z-index: 10;
+    padding: 3px 10px 3px 10px;
+    font-size: 16px;
+    font-family: 'Poppins';
+    backdrop-filter: blur(4px);
+    display: none;
+    transition: 0.3s
+}
+#searchResultContainer{
+    position: absolute;
+    width: 89%;
+    left: 5px;
+    height: max-content;
+    background-color: rgb(255, 255, 255, 0.75);
+    border-radius: 12px;
+    z-index: 100;
+    border: 2px solid white;
+    backdrop-filter: blur(7px);
+    display: none;
+    max-height: 350px;
+    overflow: scroll;
+    white-space: nowrap;
+    margin-top: -20px;
+
+}
+ul{
+    list-style-type: none;
+}
+li{
+    margin-bottom: 5px;
+    width: 100%;
+    display: none;
+    margin-left: -20px;
+    font-size: 20px
+}
+.musicControl-expand{
+    font-size: 32px;
+    color: white;
+    right: 55px;
+    position: absolute;
+    top: 14px;
+    transition: 0.3s
+}
+.musicControl{
+    display: none;
+    transition: 0.7s
+}
+
+.sleepMode {
+    font-size: 28px;
+    color: white;
+    right: 90px;
+    position: absolute;
+    top: 16px;
+    transition: 0.5s ease-out;
+    border-radius: 4px
+}
+.shuffle{
+    font-size: 28px;
+    color: white;
+    right: 125px;
+    position: absolute;
+    top: 16px;
+    transition: 0.5s ease-out;
+    border-radius: 4px
+}
+.shuffle:active,
+.sleepMode:active{
+    border: 2px solid black;
+    color: black
+}
+
+.shuffle-expanded{
+    font-size: 28px;
+    color: white;
+    right: 125px;
+    position: absolute;
+    top: -370px;
+    transition: 0.5s ease-out;
+    border-radius: 4px
+}
+
+.musicProfileonSearch {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 5px
+}
+
+@media screen and (min-width: 767px) {
+    .musicProfile{
+        width: 100%; 
+        height: max-content;
+        display: grid;
+        grid-template-columns: repeat(25, 12fr);
+        gap: 5px;
+        margin-top: 10px;
+        padding-right: 10px;
+    }
+}
+#timerBanner,
+#favoritesetbanner{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 100;
+    backdrop-filter: blur(20px);
+    text-align: center;
+    display: none;
+    top: 0px;
+    left: 0px
+}
+#timeSelector{
+    width: max-content;
+    height: 35px;
+    font-size: 13px;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-top: 15px;
+}
+#starttimer{
+    width: max-content;
+    height: 35px;
+    font-size: 13px;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-top: 5px
+}
+#closeTimerBanner{
+    font-size: 40px;
+    display: grid;
+    place-items: center;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 55px;
+    background-color: rgb(255, 255, 255);
+    border: 2px dashed black;
+    bottom: 50px;
+    border-radius: 50px;
+}
+
+#notification{
+    width: 96%;
+    height: 80px;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 100;
+    left: 2%;
+    border-radius: 20px;
+    backdrop-filter: blur(7px);
+    transition: 0.6s ease all;
+    transition-timing-function: ease;
+    transform: translateY(-200%);
+    display: none;
+}
+#notification-title{
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 15px
+}
+#hreflocation{
+    font-size: 50px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.notification-grid{
+    height: 60px;
+    width: 4px;
+    background-color: black;
+    position: absolute;
+    top: 10px;
+    right: 80px;
+    border-radius: 5px
+}
+label{
+    text-align: center;
+    color: white;
+}
+#navigationExpand{
+    position: absolute;
+    bottom: 0px;
+    background-color: transparent;
+    height: 60px;
+    width: 70%;
+    cursor: pointer;
+    z-index: 90
+}
+
+#expandedControl{
+    display: none;
+}
+
+#closeNavigation{
+    width: 43px;
+    height: 7px;
+    background-color: rgba(182, 182, 182, 0.7);
+    backdrop-filter: blur(4px);
+    border-radius: 50px;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    position: absolute;
+    top: 23px
+}
+
+
+@keyframes resizeProfile{
+    0% {
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        left: 5px;
+        position: absolute;
+        top: 5px;
+        border-radius: 5px;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        top: 50px;
+        border-radius: 15px;
+    }
+}
+@keyframes reverseProfileSize {
+    100% {
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        left: 5px;
+        position: absolute;
+        top: 5px;
+        border-radius: 5px;
+    }
+    0% {
+        width: 300px;
+        height: 300px;
+        background-color: white;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        top: 50px;
+        border-radius: 15px;
+    }
+}
+
+@keyframes resizeNavigation {
+    0%{
+        height: 60px
+    }
+    100%{
+        height: 100%
+    }
+}
+
+@keyframes reverseResizeNavigation {
+    from{
+        height: 100%
+    }
+    to{
+        height: 60px
+    }
+}
+#controller{
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    top: 475px;
+    width: 100%;
+    height: 255px;
+    transition: 0.5s ease all
+}
+#previousButton{
+    font-size: 45px;
+    position: absolute;
+    left: 30%;
+    transform: translateX(-30%);
+    transition: 0.3s
+}
+#nextButton{
+    position: absolute;
+    right: 30%;
+    transform: translateX(30%);
+    font-size: 45px;
+    transition: 0.3s
+}
+#shuffleEXP{
+    position: absolute;
+    left: 30%;
+    transform: translateX(-30%);
+    top: 80%;
+    font-size: 45px
+}
+#sleepModeEXP {
+    position: absolute;
+    right: 30%;
+    transform: translateX(30%);
+    top: 80%;
+    font-size: 45px
+}
+@media screen and (min-width: 800px) {
+    #previousButton{
+        font-size: 45px;
+        position: absolute;
+        left: 40%;
+        transform: translateX(-40%);
+        transition: 0.3s
+    }
+    #nextButton{
+        position: absolute;
+        right: 40%;
+        transform: translateX(40%);
+        font-size: 45px;
+        transition:0.3s
+    }
+    #shuffleEXP{
+        position: absolute;
+        left: 40%;
+        transform: translateX(-40%);
+        top: 80%;
+        font-size: 45px
+    }
+    #sleepModeEXP {
+        position: absolute;
+        right: 40%;
+        transform: translateX(40%);
+        top: 80%;
+        font-size: 45px
+    }
+    #previousButton:active{
+        left: 39.5%
+    }
+    #nextButton:active{
+        right: 39.5%
+    }
+}
+@media screen and (min-width: 1000px) {
+    #previousButton{
+        font-size: 45px;
+        position: absolute;
+        left: 43%;
+        transform: translateX(-43%);
+        transition: 0.3s
+    }
+    #nextButton{
+        position: absolute;
+        right: 43%;
+        transform: translateX(43%);
+        font-size: 45px;
+        transition: 0.3s
+    }
+    #shuffleEXP{
+        position: absolute;
+        left: 43%;
+        transform: translateX(-43%);
+        top: 80%;
+        font-size: 45px
+    }
+    #sleepModeEXP {
+        position: absolute;
+        right: 43%;
+        transform: translateX(43%);
+        top: 80%;
+        font-size: 45px
+    }
+    #previousButton:active{
+        left: 42.5%
+    }
+    #nextButton:active{
+        right: 42.5%
+    }
+}

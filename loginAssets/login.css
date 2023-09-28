@@ -1,0 +1,107 @@
+html{
+    font-family: 'Poppins';
+}
+#title{
+    text-align: center;
+    font-size: 35px;
+}
+#mainContainer{
+    width: 300px;
+    height: 450px;
+    background-image: url('uuunion.svg');
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 20px;
+    border-radius: 25px;
+    background-size: cover;
+    text-align: center;
+    box-shadow: 0px 0px 30px 3px gray
+}
+.usernameinput,
+.passwordinput,
+.submit,
+.attend{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.passwordinput,
+.usernameinput{
+    margin-right: 30px
+}
+.ion-icon{
+    margin-top: 0px;
+    font-size: 32px;
+    position: absolute;
+    margin-left: 12px;
+    border: black solid 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+input[type='password'],
+input[type='text']{
+    font-family: 'Poppins';
+    margin-left: 45px;
+    border: black solid 1px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 150px;
+    height: 30px;
+    outline: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 14px
+}
+#eye{
+    position: absolute;
+    font-size: 20px;
+    margin-top: 7px;
+    margin-left: 5px
+}
+#check{
+    font-family: 'Poppins';
+    border: black solid 1px;
+    border-radius: 5px;
+    width: 225px;
+    height: 34px;
+    outline: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 11px;
+    transition: 0.45s;
+    font-size: 14px;
+    background-color: white;
+}
+#check:hover{
+    width: 80px;
+    transition: 0.45s;
+}
+#checkmark{
+    margin-top: 0px;
+    position: absolute;
+    border: rgb(0, 191, 0) solid 1.5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: absolute;
+    color: rgb(0, 205, 0);
+    font-size: 23px;
+    left: 28.8%;
+    width: 32px;
+}
+#backButton{
+    margin-top: 20px;
+    margin-left: 5px;
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+}
+.labelBack{
+    top: 23px;
+    left: 55px;
+    cursor: pointer;
+    position: absolute;
+}
+#back{
+    margin-left: 20px;
+    display: none
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>What's new?</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+        <link rel="website icon" href="music player.png">
+        <style>
+            html {
+                font-family: 'Poppins';
+                background-image: url('uuunion.svg');
+                background-size: cover;
+            }
+            html::-webkit-scrollbar{
+                display: none
+            }
+            .container{
+                width: 85%;
+                height: max-content;
+                background-color: rgba(255, 255, 255, 0.8);
+                border-radius: 20px;
+                margin-top: 30px;
+                margin-left: 50%;
+                transform: translateX(-50%);
+                backdrop-filter: blur(2px);
+                padding: 10px;
+                font-size: 17px
+            }
+            .title2{
+                font-size: 40px;
+                color: white;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 15px;
+                width: max-content
+            }
+            .previewTitle{
+                font-size: 40px;
+                color: white;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                width: max-content;
+                margin-top: 25px
+            }
+            ul {
+                list-style-type: disc;
+            }
+            li {
+                list-style-type: disc;
+            }
+            .contentTitle{
+                font-size: 23px
+            }
+            img {
+                width: 250px;
+                border-radius: 25px;
+                margin-bottom: 15px
+            }
+            #zenmusic{
+                font-size: 55px;
+                color: white
+            }
+            .newItem{
+                color: #FFD700
+            }
+        </style>
+    </head>
+    <body>
+        <span id="zenmusic"><ion-icon name="chevron-back-outline"></ion-icon></span>
+        <span class="title2">What's new?</span>
+
+        <div class="container">
+            <span class="contentTitle">New & Improved features</span>
+            <ul>
+                <li>Improved search system</li>
+                <li>New volume adjust</li>
+                <li>New sleeping system</li>
+                <li>New scroll left and right button</li>
+                <li>New music</li>
+                <li>Music control using space button</li>
+                <li>Skip music button</li>
+                <li>Auto shuffle song</li>
+                <li>Auto Shuffle switch</li>
+                <li>Improved user experience by adding expanded music update and bug fixing</li>
+                <li>Previous button</li>
+                <li  class="newItem">Shuffle song now work properly with previous button</li>
+            </ul>
+
+            <span class="contentTitle">User Interface</span>
+            <ul>
+                <li>Improved User Interface(UI)</li>
+                <li>Improved search interface</li>
+                <li>Optimized transition & animation</li>
+                <li>Improved pop up in notification center</li>
+                <li>Navigation bar always on your screen</li>
+                <li>Artist name under song title(when played)</li>
+                <li>Added song name under image</li>
+                <li>Removed "Ready to listening some song?"</li>
+                <li>Interface bug fixing</li>
+                <li>Auto shuffle switch button improved</li>
+                <li>Expanded music</li>
+                <li>Optimized expanded music</li>
+                <li>Updated expanded music interface</li>
+                <li  class="newItem">Updated close expanded music</li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        var zenmusic = document.getElementById('zenmusic')
+        zenmusic.addEventListener('click', function() {
+            location.href = 'index.html'
+        })
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

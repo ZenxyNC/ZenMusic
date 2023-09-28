@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ZenMusic</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+        <link rel="website icon" href="music player.png">
+    </head>
+    <body onload="location.href='#'">
+        <div id="notification">
+            <div id="notification-title">What's new?</div> <span class="notification-grid"></span><span id="hreflocation"><ion-icon name="chevron-forward-outline"></ion-icon></span>
+        </div>
+        <div id="timerBanner">
+            <select id="timeSelector" onchange="detectTime()">
+                <option value="none">Choose timer</option>
+                <option value="10minutes">10 Minutes</option>
+                <option value="15minutes">15 Minutes</option>
+                <option value="30minutes">30 Minutes</option>
+                <option value="45minutes">45 Minutes</option>
+            </select><br>
+            <button id="closeTimerBanner"><ion-icon name="close-outline"></ion-icon></button><br>
+        </div>
+        <div id="navbar">
+            <div id="ZenMusic">
+                <img src="music player.png" id="logo">
+                <span id="title">Music</span>
+            </div>
+            <div id="searchElement">
+                <input type="search" id="search-box" placeholder="Find music" autocomplete="off">
+                <ion-icon name="search" id="search" class="search-none"></ion-icon>
+            </div>
+            <div id="profileDisplay"><img src="profile-blank.png" id="profile"></div>
+        </div>
+        <div id="searchResultContainer">
+            <ul id="musicList">
+                <li onclick="musicPlayer('People')"><img src="image/libianca.jpeg" class="musicProfileonSearch">People</li>
+                <li onclick="musicPlayer('Daylight')"><img src="image/Daylight.png" class="musicProfileonSearch">Daylight</li>
+                <li onclick="musicPlayer('Somewhere')"><img src="image/somewhere only we know.jpg" class="musicProfileonSearch">Somewhere only we know</li>
+                <li onclick="musicPlayer('Paradise')"><img src="image/This side of paradise.jpeg" class="musicProfileonSearch">This side of paradise</li>
+                <li onclick="musicPlayer('Someone')"><img src="image/Someone to stay.jpeg" class="musicProfileonSearch">Someone to stay</li>
+                <li onclick="musicPlayer('Another')"><img src="image/Tomodell.jpg" class="musicProfileonSearch">Another love</li>
+                <li onclick="musicPlayer('8Letters')"><img src="image/8 Letters.jpg" class="musicProfileonSearch">8 Letters</li>
+                <li onclick="musicPlayer('BeYours')"><img src="image/BeYours.jpg" class="musicProfileonSearch">I wanna be yours</li>
+                <li onclick="musicPlayer('Whatitis')"><img src="image/what it is.jpg" class="musicProfileonSearch">What it is?</li>
+                <li onclick="musicPlayer('thatswhatiwant')"><img src="image/thats what i want.jpg" class="musicProfileonSearch">THATS WHAT I WANT</li>
+                <li onclick="musicPlayer('letitallgo')"><img src="image/let it all go.jpg" class="musicProfileonSearch">Let it all go</li>
+                <li onclick="musicPlayer('collide')"><img src="image/collide.jpg" class="musicProfileonSearch">Collide</li>
+                <li onclick="musicPlayer('youareenough')"><img src="image/you are enough.jpg" class="musicProfileonSearch">You Are Enough</li>
+                <li onclick="musicPlayer('industrybaby')"><img src="image/industry baby.jpeg" class="musicProfileonSearch">Industry Baby</li>
+                <li onclick="musicPlayer('starboy')"><img src="image/starboy.png" class="musicProfileonSearch">Starboy</li>
+                <li onclick="musicPlayer('hotgirlbummer')"><img src="image/hot girl bummer.jpeg" class="musicProfileonSearch">Hot girl bummer</li>
+                <li onclick="musicPlayer('nothingisimpossible')"><img src="image/nothing is impossible.jpg" class="musicProfileonSearch">Nothing is impossible</li>
+                <li onclick="musicPlayer('metamorphosis')"><img src="image/metamorphosis.jpeg" class="musicProfileonSearch">Metamorphosis</li>
+                <li onclick="musicPlayer('rewritethestars')"><img src="image/rewrite the stars.jpeg" class="musicProfileonSearch">Rewrite the stars</li>
+                <li onclick="musicPlayer('television')"><img src="image/television.jpeg" class="musicProfileonSearch">Television</li>
+            </ul>
+        </div>
+
+        <!--AUDIO-->
+        <audio id="People" src="audio/people.mp3"></audio>
+        <audio id="Daylight" src="audio/Daylight.mp3"></audio>
+        <audio id="Somewhere" src="audio/Somewhere Only We Know.mp3"></audio>
+        <audio id="Paradise" src="audio/This Side Of Paradise.mp3"></audio>
+        <audio id="Someone" src="audio/Someone To Stay.mp3"></audio>
+        <audio id="Another" src="audio/Another Love.mp3"></audio>
+        <audio id="8Letters" src="audio/8 Letters.mp3"></audio>
+        <audio id="BeYours" src="audio/I Wanna Be Yours-2.mp3"></audio>
+        <audio id="Whatitis" src="audio/What It Is (Solo Version).mp3"></audio>
+        <audio id="thatswhatiwant" src="audio/thats what i want.mp3"></audio>
+        <audio id="letitallgo" src="audio/Let It All Go.mp3"></audio>
+        <audio id="collide" src="audio/Collide (feat. Tyga).mp3"></audio>
+        <audio id="jiwayangbersedih" src="audio/jiwa yang bersedih.mp3"></audio>
+        <audio id="industrybaby" src="audio/INDUSTRY BABY.mp3"></audio>
+        <audio id="youareenough" src="audio/you are enough.mp3"></audio>
+        <audio id="starboy" src="audio/Starboy.mp3"></audio>
+        <audio id="hotgirlbummer" src="audio/blackbear - hot girl bummer (slowed + reverb).mp3"></audio>
+        <audio id="television" src="audio/Rex Orange County - Television - So Far So Good (Official Audio).mp3"></audio>
+        <audio id="nothingisimpossible" src="audio/Nothing is Impossible - Hillsong Worship (Full Lyrics).mp3"></audio>
+        <audio id="rewritethestars" src="audio/Rewrite The Stars (Sped Up).mp3"></audio>
+        <audio id="metamorphosis" src="audio/METAMORPHOSIS.mp3"></audio>
+        <!--AUDIO-->
+
+        <div id="statusBadge" class="statusBadge">Std</div>
+        <div id="musicPanel" class="musicPanel">
+            <span id="rcmd">Recommended</span>
+            <span id="scrollleft"><ion-icon name="chevron-back-circle-outline"></ion-icon></span>
+            <span id="scrollright"><ion-icon name="chevron-forward-circle-outline"></ion-icon></span>
+            <div class="musicProfile" id="recomendedmusic">
+                <span class="musicIcon" onclick="musicPlayer('People')">
+                    <img src='image/libianca.jpeg' class="musicImage"><br>
+                    <label style="margin-left: 30px">People</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('Whatitis')">
+                    <img src='image/what it is.jpg' class="musicImage"><br>
+                    <label style="margin-left: 20px">What it is?</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('thatswhatiwant')">
+                    <img src='image/thats what i want.jpg' class="musicImage"><br>
+                    <label style="margin-left: 3px;">THATS WHAT I...</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('collide')">
+                    <img src='image/collide.jpg' class="musicImage"><br>
+                    <label style="margin-left: 35px">Collide</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('jiwayangbersedih')">
+                    <img src='image/jiwa yang bersedih.jpeg' class="musicImage"><br>
+                    <label style="margin-left: 0px;">Jiwa yang ber...</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('Somewhere')">
+                    <img src='image/somewhere only we know.jpg' class="musicImage"><br>
+                    <label style="margin-left: 0px;">Somewhere o...</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('Paradise')">
+                    <img src='image/This side of paradise.jpeg' class="musicImage"><br>
+                    <label style="margin-left: 15px">This side of...</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('industrybaby')">
+                    <img src='image/industry baby.jpeg' class="musicImage"><br>
+                    <label style="margin-left: 6px">Industry Baby</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('youareenough')">
+                    <img src='image/you are enough.jpg' class="musicImage"><br>
+                    <label style="margin-left: 0px">You Are Enough</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('starboy')">
+                    <img src='image/starboy.png' class="musicImage"><br>
+                    <label style="margin-left: 30px">Starboy</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('hotgirlbummer')">
+                    <img src='image/hot girl bummer.jpeg' class="musicImage"><br>
+                    <label style="margin-left: 7px">Hot girl bum...</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('Daylight')">
+                    <img src='image/Daylight.png' class="musicImage"><br>
+                    <label style="margin-left: 25px">Daylight</label>
+                </span>
+                <span class="musicIcon" onclick='musicPlayer("nothingisimpossible")'>
+                    <img src='image/nothing is impossible.jpg' class="musicImage"><br>
+                    <label style="margin-left: 14px">Nothing is i...</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('letitallgo')">
+                    <img src='image/let it all go.jpg' class="musicImage"><br>
+                    <label style="margin-left: 20px">Let it all go</label>
+                </span>
+                <span class="musicIcon" onclick='musicPlayer("metamorphosis")'>
+                    <img src='image/metamorphosis.jpeg' class="musicImage"><br>
+                    <label style="margin-left: 17px">Metamorp...</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('Someone')">
+                    <img src='image/Someone to stay.jpeg' class="musicImage"><br>
+                    <label style="margin-left: 3px">Someone to s...</label>
+                </span>
+                <span class="musicIcon" onclick='musicPlayer("television")'>
+                    <img src='image/television.jpeg' class="musicImage"><br>
+                    <label style="margin-left: 22px">Television</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('Another')">
+                    <img src='image/Tomodell.jpg' class="musicImage"><br>
+                    <label style="margin-left: 10px">Another Love</label>
+                </span>
+                <span class="musicIcon" onclick='musicPlayer("8Letters")'>
+                    <img src='image/8 letters.jpg' class="musicImage"><br>
+                    <label style="margin-left: 30px">8 Letters</label>
+                </span>
+                <span class="musicIcon" onclick='musicPlayer("rewritethestars")'>
+                    <img src='image/rewrite the stars.jpeg' class="musicImage"><br>
+                    <label style="margin-left: 3px">Rewrite the st...</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('BeYours')">
+                    <img src='image/BeYours.jpg' class="musicImage"><br>
+                    <label style="margin-left: px">I Wanna Be Yo...</label>
+                </span>
+            </div>
+        </div>
+        <div class="musicPanel-Fav">
+            <span id="favorite">Favorite</span>
+            <div class="musicProfile">
+                <span id="lastplayed1" class="musicIcon" onclick="musicPlayer('thatswhatiwant')">
+                    <img src="image/thats what i want.jpg" class="musicImage"><br>
+                    <label style="margin-left: 3px">THATS WHAT I...</label>
+                </span>
+                <span class="musicIcon" onclick="musicPlayer('starboy')">
+                    <img src='image/starboy.png' class="musicImage"><br>
+                    <label style="margin-left: 30px">Starboy</label>
+                </span>
+                <span id="lastplayed3" class="musicIcon" onclick="musicPlayer('collide')">
+                    <img src="image/collide.jpg" class="musicImage">
+                    <br>
+                    <label style="margin-left: 35px">Collide</label>
+                </span>
+            </div>
+        </div>
+        <div id="navigationinfo" class="navigationinfo">
+            <div id="navigationExpand">
+                
+            </div>
+            <div id="closeNavigation">
+            </div>
+            <div id="musicPlayedImage-base" class="musicPlayedImage-base"></div>
+            <div id="musicPlayedName-base" class="musicPlayedName-base">Music-name</div>
+            <div id="musicPlayedArtist-base" class="musicPlayedArtist-base">Artist</div>
+            <ion-icon name="chevron-back" id="musicControlButton" class="musicControl-expand"></ion-icon>
+            <div id="musicControl" class="musicControl">
+                <ion-icon name="bed" id="sleepMode" title="Sleeping mode" class="sleepMode"></ion-icon>
+                <div id="volumeSlider" title="Volume" class="volumeSlider">
+                    <input type="range" id="volRange" min="0" max="1" value="1" step="0.01"> 
+                </div>
+                <ion-icon name="repeat-outline" id="shuffle" title="Auto Shuffle off" class="shuffle"></ion-icon>
+            </div>
+            <div id="controller">
+                <ion-icon name="play-back" id="previousButton" onclick="previousTrack()"></ion-icon>
+                <ion-icon name="play-forward" id="nextButton" onclick="nextTrack()"></ion-icon>
+                <ion-icon name="bed" id="sleepModeEXP" title="Sleeping mode" class="sleepMode"></ion-icon>
+                <ion-icon name="repeat-outline" id="shuffleEXP" title="Auto Shuffle off" class="shuffle"></ion-icon>
+                <div id="volumeSliderEXP" title="Volume" class="volumeSlider">
+                    <input type="range" id="volRangeEXP" min="0" max="1" value="1" step="0.01"> 
+                </div>
+            </div>
+            <span id="music-Pause" title="Pause">
+                <ion-icon name="pause-outline"></ion-icon>
+            </span>
+            <span id="music-Play" title="Play">
+                <ion-icon name="play"></ion-icon>
+            </span>
+        </div>
+    </body>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="base.js"></script>
+</html>
